@@ -1,0 +1,109 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: #f4f7fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Custom File Upload Button */
+.custom-file-upload {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: background 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background: #0056b3;
+}
+
+/* Transcribe Button */
+button {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1e7e34;
+}
+
+/* Status */
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 10px;
+}
+
+/* Transcript & Summary Sections */
+h2 {
+    color: #222;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+p {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 10px auto;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
