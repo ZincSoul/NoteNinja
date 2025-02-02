@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summarizer</title>
+    
+    <script>
+        async function uploadFile() {
+            let fileInput = document.getElementById("fileInput");
+            let file = fileInput.files[0];
+            let formData = new FormData();
+            formData.append("file", file);
+
+            document.getElementById("status").innerText = "Transcribing...";
+            let response = await fetch("/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            let result = await response.json();
+            document.getElementById("status").innerText = "Done!";
+            document.getElementById("transcript").innerText = result.transcript;
+            document.getElementById("summary").innerText = result.summary;
+        }
+    </script>
+</head>
+<body>
+    <h1>Meeting Summarizer</h1>
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Transcribe</button>
+    <p id="status"></p>
+    <h2>Transcript:</h2>
+    <p id="transcript"></p>
+    <h2>Summary:</h2>
+    <p id="summary"></p>
+</body>
+</html>
